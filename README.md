@@ -1,4 +1,8 @@
-SelfLocate
+OpenLocate
+
+License: GPL-V3
+
+
 
 [![Build Status](https://magnum.travis-ci.com/HenryHoggard/OpenLocate-Server.svg?token=gcgF4x4zUmN7ws9HiZEs)](https://magnum.travis-ci.com/HenryHoggard/OpenLocate-Server)
 
