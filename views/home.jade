@@ -1,0 +1,34 @@
+extends layout2
+
+block content
+  if !user
+   Welcome
+
+  else
+    style.
+      #map {
+      margin: 0px;
+      height: 100%;
+      padding: 0px;      
+      }
+      html,body {
+      padding: 0px;
+      margin: 0px;
+      height:100%;
+
+      }
+    link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css')
+    #map
+
+  
+
+    script(src='https://code.jquery.com/jquery-1.11.2.min.js')
+    script(src='http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js')
+    script(src='http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Fmjtd%7Cluu82quan1%2C2w%3Do5-94t0ua')
+    script.
+      var map = L.map('map').setView([#{data[1]}, #{data[2]}], 15);
+      var marker = L.marker([#{data[1]}, #{data[2]}]).addTo(map).bindPopup('<b>Nexus 5</b><br>Accuracy: 20 metres<br>Last Update: 5 minutes ago').openPopup();
+   
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      }).addTo(map); 
+      var marker = L.marker([51.5, -0.09]).addTo(map);
