@@ -6,8 +6,6 @@
 version: "{build}"
 
 clone_depth: 10
-services:
- - mongodb
 # Fix line endings on Windows
 init:
   - git config --global core.autocrlf true
