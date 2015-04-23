@@ -21,7 +21,7 @@ install:
 #  - npm install -g grunt-cli
   - npm install
 
-#build: off
+build: off
 
 test_script:
   # Output useful info for debugging.
