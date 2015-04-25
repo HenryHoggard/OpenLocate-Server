@@ -14,6 +14,7 @@ OpenLocate is an OpenSource, self-hosted alternative to Google Device Manager an
 
 ### Version
 0.0.1
+
 OpenLocate is still in development and will be buggy. Many features are still in development, however you can currently track your lost devices with OpenLocate!
 
 ### Tech
@@ -48,7 +49,7 @@ $ node app.js
 
 ### Development
 
-Want to contribute? Great! 
+Want to contribute? 
 
 Report issues or contribute new code.
 
