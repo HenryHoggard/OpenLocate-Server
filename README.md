@@ -1,8 +1,6 @@
-penLocate
+# OpenLocate
 
 OpenLocate is an OpenSource, self-hosted alternative to Google Device Manager and iCloud. Currently OpenLocate only supports Android, and only offers location tracking. However cross platform and device management functionality will come in the future.
-
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
 
 > OpenLocate was developed by Henry Hoggard 
 > for a final year Computer Science dissertation
