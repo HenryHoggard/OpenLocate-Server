@@ -40,7 +40,7 @@ module.exports.createDevice = function(req,res,next) {
           var authkey = buf.toString('hex');
           console.log(authkey);
 
-          Device.update({email:email}, {$set: { deviceid: req.body.deviceid, model: req.body.model, authkey:authkey }}, {upsert: true}, function(err){if (err) { console.log(err);}})	;     
+          Device.update({deviceid:req.body.deviceid}, {$set: {email:email, deviceid: req.body.deviceid, model: req.body.model, authkey:authkey }}, {upsert: true}, function(err){if (err) { console.log(err);}})	;     
           user.authkey = authkey;
           user.save(function(err) {
              if (err) return (err);

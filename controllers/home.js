@@ -7,6 +7,8 @@ var User = require('../models/User');
 var Device = require('../models/Device');
 var secrets = require('../config/secrets');
 var Location = require('../models/Location');
+var moment = require('moment');
+
 
 exports.index = function(req, res) {
    var data = [];
@@ -24,17 +26,21 @@ exports.index = function(req, res) {
              if (location) {
               isdevice = "true";
             }
-  		  console.log(location);
              location.forEach(function(elem,index,array){
-              console.log(elem.deviceid);
-         	   console.log(elem.locations[elem.locations.length-1].lat);
-          	   console.log(elem.locations[elem.locations.length-1].lng);
-              data = [elem.deviceid,elem.locations[elem.locations.length-1].lat,elem.locations[elem.locations.length-1].lng];
+
+               var time = elem.locations[elem.locations.length-1].time;
+               var newtime = moment(time).fromNow();
+               var singledata = [];
+              singledata = [elem.deviceid,elem.locations[elem.locations.length-1].lat,elem.locations[elem.locations.length-1].lng, newtime];
+              data.push(singledata);
+
+              console.log(singledata);
              });
+
         console.log(data);
         res.render('home', {
         title: 'Home',
-        data: data,
+        data: JSON.stringify(data),
         });
  		});
   	});
