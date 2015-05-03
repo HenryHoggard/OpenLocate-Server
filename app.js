@@ -103,10 +103,10 @@ app.listen(app.get('port'), function() {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
- https.createServer({
+/* https.createServer({
       key: fs.readFileSync('key.pem'),
       cert: fs.readFileSync('cert.pem')
     }, app).listen(4000);
 
-
+*/
 module.exports = app;
