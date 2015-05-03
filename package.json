@@ -24,6 +24,8 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.9.1",
     "express-validator": "^2.6.0",
+    "fs": "0.0.2",
+    "https": "^1.0.0",
     "jade": "^1.7.0",
     "less": "^1.7.5",
     "lodash": "^2.4.1",

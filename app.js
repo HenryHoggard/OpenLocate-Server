@@ -22,6 +22,8 @@ var deviceController = require('./controllers/device');
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 var app = express();
+var fs = require('fs');
+var https = require('https');
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Make sure MongoDB is running.');
@@ -100,5 +102,11 @@ app.use(errorHandler());
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
+
+ https.createServer({
+      key: fs.readFileSync('key.pem'),
+      cert: fs.readFileSync('cert.pem')
+    }, app).listen(4000);
+
 
 module.exports = app;

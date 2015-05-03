@@ -19,18 +19,3 @@ block content
       }
     link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css')
     #map
-    script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-    script(src='http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js')
-    script.
-      var data = !{data};
-      console.log(data);
-      console.log(data[0][1]);
-      var map = L.map('map').setView([ (data[0][1]), (data[0][2])], 15);
-      $.each(data, function(index) {
-      console.log(index);
-      var marker = L.marker([data[index][1], data[index][2]]).addTo(map).bindPopup('<b>Nexus 5</b><br>Accuracy: Unknown<br>Last Update: ' +  data[index][3]).openPopup();
-
-      });
-   
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      }).addTo(map); 

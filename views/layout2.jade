@@ -16,5 +16,18 @@ html
       include partials/flash
     block content
 
-
     != js('application')
+
+    script.
+      var data = !{data};
+      console.log(data);
+      console.log(data[0][1]);
+      var map = L.map('map').setView([ (data[0][1]), (data[0][2])], 15);
+      $.each(data, function(index) {
+      console.log(index);
+      var marker = L.marker([data[index][1], data[index][2]]).addTo(map).bindPopup('<b>Nexus 5</b><br>Accuracy: Unknown<br>Last Update: ' +  data[index][3]).openPopup();
+
+      });
+
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      }).addTo(map); 

@@ -7,12 +7,14 @@ lib-cov
 *.pid
 *.gz
 *.swp
-
+*.pem
+*.key
 pids
 logs
 results
 tmp
 
+config/secrets.js
 npm-debug.log
 node_modules
 .idea

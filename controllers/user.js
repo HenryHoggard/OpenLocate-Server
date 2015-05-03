@@ -105,6 +105,8 @@ exports.postSignup = function(req, res, next) {
       if (err) return next(err);
       req.logIn(user, function(err) {
         if (err) return next(err);
+        //req.flash('success', { msg: 'Success! You have registered an account.' });
+
         res.redirect('/');
       });
     });
