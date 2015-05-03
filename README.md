@@ -44,7 +44,16 @@ You can then launch the server:
 ```sh
 $ node app.js
 ```
+### SSL
 
+OpenLocate needs to be configured with SSL to be effective in keeping user data private. Currently only valid signed certificates are accepted by the mobile client. To use SSL please replace the following code in "app.js" with the relevant information for your certificates:
+```js
+ https.createServer({
+      key: fs.readFileSync('key.pem'),
+      cert: fs.readFileSync('cert.pem')
+    }, app).listen(4000);
+
+```
 
 
 ### Development
