@@ -17,6 +17,7 @@ html
     block content
 
     != js('application')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
 
     script.
       var data = !{data};
@@ -25,9 +26,9 @@ html
       var map = L.map('map').setView([ (data[0][1]), (data[0][2])], 15);
       $.each(data, function(index) {
       console.log(index);
-      var marker = L.marker([data[index][1], data[index][2]]).addTo(map).bindPopup('<b>Nexus 5</b><br>Accuracy: Unknown<br>Last Update: ' +  data[index][3]).openPopup();
+      var marker = L.marker([data[index][1], data[index][2]]).addTo(map).bindPopup('<b>Device</b><br>Last Update: ' +  data[index][3]).openPopup();
 
       });
 
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       }).addTo(map); 
