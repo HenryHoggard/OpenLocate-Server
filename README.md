@@ -1,6 +1,6 @@
 # OpenLocate
 
-[OpenLocate Android](https://github.com/henryhoggard/openlocate-server)
+[OpenLocate Android](https://github.com/henryhoggard/openlocate)
 
 OpenLocate is an OpenSource, self-hosted alternative to Google Device Manager and iCloud. Currently OpenLocate  supports Android, and allows users to locate their lost devices. Cross platform remote wipe functionality will come in the future.
 
